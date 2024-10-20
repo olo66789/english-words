@@ -143,7 +143,7 @@ function clearSearch() {
 
 document.addEventListener("DOMContentLoaded", function () {
     // Load the header content
-    fetch('header.html')
+    fetch('../header.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
