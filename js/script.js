@@ -123,18 +123,6 @@ function goBack() {
     window.location.href = "../index.html";
 }
 
-const headerHTML = `
-    <div class="search-container">
-        <input type="text" id="searchInput" onkeyup="filterList()" placeholder="Wyszukaj słówka...">
-		<button id="clearButton" onclick="clearSearch()">✖</button>
-        <button id="menuButton" onclick="toggleMenu()">☰</button>
-    </div>
-    <div id="menu">
-        <button id="swapButton" onclick="swapColumns(); swapCategoryRowData();"></button>
-        <button id="backButton" onclick="goBack()">↩</button>
-    </div>`;
-document.getElementById('header-container').innerHTML = headerHTML;
-
 const searchInput = document.getElementById('searchInput');
 const clearButton = document.getElementById('clearButton');
 
@@ -154,27 +142,43 @@ function clearSearch() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Load the header content
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading header:', error));
+
+    // Load the vocabulary tables
     const files = [
-        'foc&antw.html',
-        'pice&trac&mm.html',
-        'tos&se.html',
-        'unit11.html',
-        'unit12.html',
-        'unit13.html',
-        'unit14.html'
+        'vocabulary/foc&antw.html',
+        'vocabulary/pice&trac&mm.html',
+        'vocabulary/tos&se.html',
+        'vocabulary/unit11.html',
+        'vocabulary/unit12.html',
+        'vocabulary/unit13.html',
+        'vocabulary/unit14.html'
     ];
     
     const mainTable = document.getElementById("allWordsTable");
 
     files.forEach(file => {
         fetch(file)
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
+                }
+                return response.text();
+            })
             .then(data => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
                 const table = doc.querySelector("#translationTable");
                 if (table) {
                     mainTable.innerHTML += table.innerHTML;
+                } else {
+                    console.error('No translationTable found in:', file);
                 }
             })
             .catch(error => console.error('Error loading file:', file, error));
