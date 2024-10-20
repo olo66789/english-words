@@ -155,13 +155,13 @@ function clearSearch() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const files = [
-        'vocabulary/foc&antw.html',
-        'vocabulary/pice&trac&mm.html',
-        'vocabulary/tos&se.html',
-        'vocabulary/unit11.html',
-        'vocabulary/unit12.html',
-        'vocabulary/unit13.html',
-        'vocabulary/unit14.html'
+        'foc&antw.html',
+        'pice&trac&mm.html',
+        'tos&se.html',
+        'unit11.html',
+        'unit12.html',
+        'unit13.html',
+        'unit14.html'
     ];
     
     const mainTable = document.getElementById("allWordsTable");
