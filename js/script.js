@@ -165,10 +165,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     
     const mainTable = document.getElementById("allWordsTable");
-    let loadPromises = [];
 
     files.forEach(file => {
-        const loadPromise = fetch(file)
+        fetch(file)
             .then(response => response.text())
             .then(data => {
                 const parser = new DOMParser();
@@ -179,12 +178,5 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
             .catch(error => console.error('Error loading file:', file, error));
-        
-        loadPromises.push(loadPromise);
-    });
-
-    Promise.all(loadPromises).then(() => {
-        saveOriginalOrder();
     });
 });
-
