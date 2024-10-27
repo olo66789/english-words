@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+	<title>Types of sport & Clothes and equipment & Sports facilities & Sporting events</title>
+</head>
+
+<body>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterList()" placeholder="Wyszukaj słówka...">
+        <button id="clearButton" onclick="clearSearch()">
+            <img src="../svg/x.svg" width="16" height="16" />
+        </button>
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="../svg/menu.svg" width="20" height="20" />
+        </button>
+    </div>
+    <div id="menu">
+        <button id="swapButton" onclick="swapColumns(); swapCategoryRowData();">
+            <img src="../svg/swap.svg" width="18" height="18" />
+        </button>
+        <button id="backButton" onclick="goBack()">
+            <img src="../svg/back.svg" width="18" height="18" />
+        </button>
+    </div>
+    
+<table id="translationTable">
+
+    <tr class="category-row"><td colspan="2" data-en="Types of sport" data-pl="Dyscypliny sportu">Types of sport</td></tr> 
+    <tr><td>archery</td><td>łucznictwo</td></tr> 
+    <tr><td>athletics</td><td>lekkoatletyka</td></tr> 
+    <tr><td>badminton</td><td>badminton</td></tr> 
+    <tr><td>baseball</td><td>baseball</td></tr> 
+    <tr><td>pool</td><td>bilard</td></tr> 
+    <tr><td>canoeing</td><td>kajakarstwo</td></tr> 
+    <tr><td>chess</td><td>szachy</td></tr> 
+    <tr><td>climbing</td><td>wspinaczka</td></tr> 
+    <tr><td>cricket</td><td>krykiet</td></tr> 
+    <tr><td>cycling</td><td>kolarstwo</td></tr> 
+    <tr><td>discus</td><td>rzut dyskiem</td></tr> 
+    <tr><td>diving</td><td>skok do wody / nurkowanie</td></tr> 
+    <tr><td>gymnastics</td><td>gimnastyka</td></tr> 
+    <tr><td>hammer throw</td><td>rzut młotem</td></tr> 
+    <tr><td>handball</td><td>piłka ręczna</td></tr> 
+    <tr><td>high jump</td><td>skok wzwyż</td></tr> 
+    <tr><td>horse racing</td><td>wyścigi konne</td></tr> 
+    <tr><td>ice hockey</td><td>hokej na lodzie</td></tr> 
+    <tr><td>ice-skating</td><td>łyżwiarstwo</td></tr> 
+    <tr><td>long jump</td><td>skok w dal</td></tr> 
+    <tr><td>martial arts</td><td>sztuki walki</td></tr> 
+    <tr><td>motor racing</td><td>wyścigi samochodowe</td></tr> 
+    <tr><td>rollerblading</td><td>jazda na łyżworolkach</td></tr> 
+    <tr><td>rowing</td><td>wioślarstwo</td></tr> 
+    <tr><td>rugby</td><td>rugby</td></tr> 
+    <tr><td>sailing</td><td>żeglarstwo</td></tr> 
+    <tr><td>shooting</td><td>strzelectwo</td></tr> 
+    <tr><td>shot put</td><td>pchnięcie kulą</td></tr> 
+    <tr><td>ski jumping</td><td>skoki narciarskie</td></tr> 
+    <tr><td>table tennis</td><td>tenis stołowy</td></tr> 
+    <tr><td>volleyball</td><td>siatkówka</td></tr> 
+    <tr><td>weightlifting</td><td>podnoszenie ciężarów</td></tr> 
+    <tr><td>windsurfing</td><td>windsurfing</td></tr> 
+    <tr><td>wrestling</td><td>zapasy</td></tr> 
+    <tr class="highlight"><td>cross-country skiing</td><td>biegi narciarskie</td></tr> 
+    <tr class="highlight"><td>decathlon</td><td>dziesięciobój</td></tr> 
+    <tr class="highlight"><td>hang-gliding</td><td>lotniarstwo</td></tr> 
+    <tr class="highlight"><td>hurdles</td><td>bieg przez płotki</td></tr> 
+    <tr class="highlight"><td>javelin</td><td>rzut oszczepem</td></tr> 
+    <tr class="highlight"><td>kitesurfing</td><td>odmiana surfingu z użyciem latawca</td></tr> 
+    <tr class="highlight"><td>obstacle race</td><td>bieg z przeszkodami</td></tr> 
+    <tr class="highlight"><td>parachuting</td><td>spadochroniarstwo</td></tr> 
+    <tr class="highlight"><td>pole vault</td><td>skok o tyczce</td></tr> 
+    <tr class="highlight"><td>relay race</td><td>bieg sztafetowy</td></tr> 
+    <tr class="highlight"><td>scuba diving</td><td>nurkowanie z akwalungiem</td></tr> 
+    <tr class="highlight"><td>triathlon</td><td>triatlon</td></tr> 
+    <tr class="highlight"><td>water-skiing</td><td>narciarstwo wodne</td></tr> 
+    <tr class="category-row"><td colspan="2" data-en="Clothes and equipment" data-pl="Stroje i sprzęt sportowy">Clothes and equipment</td></tr> 
+    <tr><td>(golf) club</td><td>kij (golfowy)</td></tr> 
+    <tr><td>basket</td><td>kosz</td></tr> 
+    <tr><td>bat</td><td>kij (np. do baseballa, krykieta)</td></tr> 
+    <tr><td>board</td><td>deska (np. snowboardowa)</td></tr> 
+    <tr><td>boots</td><td>buty (np. narciarskie)</td></tr> 
+    <tr><td>bow</td><td>łuk</td></tr> 
+    <tr><td>cap</td><td>czapka, czepek</td></tr> 
+    <tr><td>gloves</td><td>rękawice</td></tr> 
+    <tr><td>goal</td><td>bramka</td></tr> 
+    <tr><td>goggles</td><td>gogle</td></tr> 
+    <tr><td>helmet</td><td>kask</td></tr> 
+    <tr><td>net</td><td>siatka</td></tr> 
+    <tr><td>oar</td><td>wiosło</td></tr> 
+    <tr><td>pads</td><td>ochraniacze (np. na kolana, łokcie)</td></tr> 
+    <tr><td>puck</td><td>krążek (hokejowy)</td></tr> 
+    <tr><td>racket</td><td>rakieta</td></tr> 
+    <tr><td>saddle</td><td>siodło</td></tr> 
+    <tr><td>skates</td><td>łyżwy, wrotki</td></tr> 
+    <tr><td>tracksuit</td><td>dres</td></tr> 
+    <tr><td>trainers</td><td>buty sportowe</td></tr> 
+    <tr><td>weights</td><td>ciężarki</td></tr> 
+    <tr><td>wetsuit</td><td>strój piankowy do nurkowania</td></tr> 
+    <tr class="category-row"><td colspan="2" data-en="Sports facilities" data-pl="Obiekty sportowe">Sports facilities</td></tr> 
+    <tr><td>basketball court</td><td>boisko do koszykówki</td></tr> 
+    <tr><td>pool table room</td><td>sala bilardowa</td></tr> 
+    <tr><td>bowling alley</td><td>kręgielnia</td></tr> 
+    <tr><td>boxing ring</td><td>ring bokserski</td></tr> 
+    <tr><td>climbing wall</td><td>ścianka wspinaczkowa</td></tr> 
+    <tr><td>field</td><td>boisko</td></tr> 
+    <tr><td>football pitch</td><td>boisko do piłki nożnej</td></tr> 
+    <tr><td>golf course</td><td>pole golfowe</td></tr> 
+    <tr><td>gym</td><td>sala gimnastyczna, siłownia</td></tr> 
+    <tr><td>ice rink</td><td>lodowisko</td></tr> 
+    <tr><td>pool</td><td>basen</td></tr> 
+    <tr><td>skate park</td><td>plac z przeszkodami do jazdy na deskorolce</td></tr> 
+    <tr><td>slope / piste</td><td>stok</td></tr> 
+    <tr><td>stadium</td><td>stadion</td></tr> 
+    <tr><td>tennis court</td><td>kort tenisowy</td></tr> 
+    <tr><td>track</td><td>tor, bieżnia</td></tr> 
+    <tr class="category-row"><td colspan="2" data-en="Sporting events" data-pl="Imprezy sportowe">Sporting events</td></tr> 
+    <tr><td>beat sb</td><td>pokonać kogoś</td></tr> 
+    <tr><td>break a record</td><td>pobić rekord</td></tr> 
+    <tr><td>bring on</td><td>wprowadzić do gry (np. zawodnika na boisko)</td></tr> 
+    <tr><td>captain</td><td>kapitan</td></tr> 
+    <tr><td>championships</td><td>mistrzostwa</td></tr> 
+    <tr><td>cheer a team on</td><td>kibicować drużynie</td></tr> 
+    <tr><td>coach / trainer</td><td>trener / trenerka</td></tr> 
+    <tr><td>come in first / second</td><td>być pierwszym / drugim na mecie</td></tr> 
+    <tr><td>enter a competition</td><td>wziąć udział w zawodach</td></tr> 
+    <tr><td>final whistle</td><td>ostatni gwizdek</td></tr> 
+    <tr><td>finalist</td><td>finalista</td></tr> 
+    <tr><td>goalkeeper</td><td>bramkarz</td></tr> 
+    <tr><td>gold medallist</td><td>złoty medalista</td></tr> 
+    <tr><td>heat</td><td>eliminacje</td></tr> 
+    <tr><td>International Olympic Committee</td><td>Międzynarodowy Komitet Olimpijski</td></tr> 
+    <tr><td>judge</td><td>sędzia</td></tr> 
+    <tr><td>keep one's fingers crossed</td><td>trzymać kciuki</td></tr> 
+    <tr><td>Olympic Games</td><td>Igrzyska Olimpijskie</td></tr> 
+    <tr><td>Paralympic athlete</td><td>paraolimpijczyk</td></tr> 
+    <tr><td>runner-up</td><td>osoba / drużyna, która zdobyła drugie miejsce w zawodach</td></tr> 
+    <tr><td>tournament</td><td>turniej</td></tr> 
+    <tr><td>trophy</td><td>trofeum, puchar</td></tr> 
+    <tr><td>World Cup</td><td>Puchar Świata</td></tr> 
+    <tr class="highlight"><td>approach the line</td><td>zbliżać się do mety</td></tr>     
+
+</table>
+	
+	<script src="../js/script.js"></script>
+
+</body>
+</html>
