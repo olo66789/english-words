@@ -4,18 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5494/5494702.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Inglisz Łords</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <title>Słówka</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        body { background-color: #121212; color: #ffffff; font-family: Arial, sans-serif; margin: 0; padding: 20px; position: relative; }
+        h1 { font-family: 'Poppins', Arial, sans-serif; margin: 0; padding: 15px 0; text-transform: uppercase; background-color: #333; width: 100%; font-size: 2.3em; position: relative; z-index: 2; }
+        nav h2 { font-family: 'Poppins', Arial, sans-serif; margin: 15px 0; text-transform: uppercase; font-size: 1.8em; text-align: center; }
+        .vocabulary-item { text-align: center; margin: 10px auto; max-width: 600px; }
+        .vocabulary-item:last-child { margin-bottom: 20px; }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li { margin-bottom: 10px; border-bottom: 1px solid #333; }
+        nav ul li:first-child { border-top: none; }
+        nav ul li:last-child { border-bottom: none; }
+        nav ul li a { text-decoration: none; color: #ffcc00; font-size: 18px; transition: color 0.3s; }
+        nav ul li a:hover { color: #ff9900; }
+        .vocabulary-item:hover a { color: #ff9900; }
+        nav ul li .test-date { display: block; font-size: 14px; opacity: 0.6; transition: opacity 0.3s; }
+        .SpecialDate { animation: SpecialAnimation 1s infinite alternate; }
+        @keyframes SpecialAnimation { from { transform: scale(1); } to { transform: scale(1.05); } }
+        .vocabulary-item:hover .test-date { opacity: 0.4; }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1><a href="vocabulary/allwords.html" class="allbutton">WSZYSTKIE SŁÓWKA</a></h1>
-    </header>
-    
     <nav>
         <ul>
+            <!-- Unit 9 -->
             <li>
                 <h2>Unit 9</h2>
                 <div class="vocabulary-item">
@@ -27,6 +43,8 @@
                     <a href="vocabulary/pice&trac&mm.html">Participating in Cultural Events | Traditions and Customs | Mass Media</a>
                 </div>
             </li>
+
+            <!-- Unit 10 -->
             <li>
                 <h2>Unit 10</h2>
                 <div class="vocabulary-item">
@@ -34,6 +52,8 @@
                     <a href="vocabulary/tos&se.html">Types of sport | Sporting events</a>
                 </div>
             </li>
+
+            <!-- Unit 11-14 (Ukryte) -->
             <li style="display:none;">
                 <h2>Unit 11</h2>
                 <div class="vocabulary-item">
@@ -65,8 +85,32 @@
         </ul>
     </nav>
 
-    <script src="js/script.js"></script>
-	
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const testDates = document.querySelectorAll(".test-date");
+            const now = new Date();
+            now.setHours(0, 0, 0, 0);
+            
+            let closestDate = null;
+            let closestElement = null;
+    
+            testDates.forEach((element) => {
+                const dateText = element.textContent.trim();
+                const testDate = new Date(dateText.split('.').reverse().join('-'));
+                testDate.setHours(0, 0, 0, 0);
+                
+                if (testDate >= now && (!closestDate || testDate <= closestDate)) {
+                    closestDate = testDate;
+                    closestElement = element;
+                }
+            });
+    
+            if (closestElement) {
+                closestElement.parentElement.classList.add("SpecialDate");
+            }
+        });
+    </script>    
+
 </body>
 
 </html>

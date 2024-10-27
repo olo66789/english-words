@@ -61,35 +61,15 @@ function filterList() {
 
 document.addEventListener('DOMContentLoaded', saveOriginalOrder);
 
-document.addEventListener("DOMContentLoaded", function() {
-    const testDates = document.querySelectorAll(".test-date");
-    const now = new Date();
-    now.setHours(0, 0, 0, 0);
-    let closestDate = null;
-    let closestElement = null;
-    testDates.forEach((element) => {
-        const dateText = element.textContent.trim();
-        const testDate = new Date(dateText.split('.').reverse().join('-'));
-        testDate.setHours(0, 0, 0, 0);
-        if (testDate >= now && (!closestDate || testDate <= closestDate)) {
-            closestDate = testDate;
-            closestElement = element;
-        }
-    });
-    if (closestElement) {
-        closestElement.parentElement.classList.add("SpecialDate");
-    }
-});
-
 function toggleMenu() {
     const menu = document.getElementById('menu');
     const menuButton = document.getElementById('menuButton');
     if (menu.style.display === "none" || menu.style.display === "") {
         menu.style.display = "block";
-        menuButton.innerHTML = "✖";
+        menuButton.innerHTML = '<img src="../svg/x.svg" width="18" height="18" />';
     } else {
         menu.style.display = "none";
-        menuButton.innerHTML = "☰";
+        menuButton.innerHTML = '<img src="../svg/menu.svg" width="20" height="20" />';
     }
 }
 
@@ -123,18 +103,6 @@ function goBack() {
     window.location.href = "../index.html";
 }
 
-const headerHTML = `
-    <div class="search-container">
-        <input type="text" id="searchInput" onkeyup="filterList()" placeholder="Wyszukaj słówka...">
-		<button id="clearButton" onclick="clearSearch()">✖</button>
-        <button id="menuButton" onclick="toggleMenu()">☰</button>
-    </div>
-    <div id="menu">
-        <button id="swapButton" onclick="swapColumns(); swapCategoryRowData();"></button>
-        <button id="backButton" onclick="goBack()">↩</button>
-    </div>`;
-document.getElementById('header-container').innerHTML = headerHTML;
-
 const searchInput = document.getElementById('searchInput');
 const clearButton = document.getElementById('clearButton');
 
@@ -152,31 +120,3 @@ function clearSearch() {
   searchInput.focus();
   filterList(); 
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    const files = [
-        'foc&antw.html',
-        'pice&trac&mm.html',
-        'tos&se.html',
-        'unit11.html',
-        'unit12.html',
-        'unit13.html',
-        'unit14.html'
-    ];
-    
-    const mainTable = document.getElementById("allWordsTable");
-
-    files.forEach(file => {
-        fetch(file)
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(data, 'text/html');
-                const table = doc.querySelector("#translationTable");
-                if (table) {
-                    mainTable.innerHTML += table.innerHTML;
-                }
-            })
-            .catch(error => console.error('Error loading file:', file, error));
-    });
-});

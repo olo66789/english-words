@@ -4,17 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5494/5494702.png" type="image/x-icon">
+	<link rel="icon" href="../img/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-	
 	<title>Forms of culture & Artists and their work</title>
-	
 </head>
 
 <body>
 
-<div id="header-container"></div>
-
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterList()" placeholder="Wyszukaj słówka...">
+        <button id="clearButton" onclick="clearSearch()">
+            <img src="../svg/x.svg" width="16" height="16" />
+        </button>
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="../svg/menu.svg" width="20" height="20" />
+        </button>
+    </div>
+    <div id="menu">
+        <button id="swapButton" onclick="swapColumns(); swapCategoryRowData();">
+            <img src="../svg/swap.svg" width="18" height="18" />
+        </button>
+        <button id="backButton" onclick="goBack()">
+            <img src="../svg/back.svg" width="18" height="18" />
+        </button>
+    </div>
+    
 <table id="translationTable">
 
 <tr class="category-row"><td colspan="2" data-en="Forms of culture" data-pl="Dziedziny kultury">Forms of culture</td></tr> 
