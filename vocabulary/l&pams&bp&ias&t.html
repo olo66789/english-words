@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+	<title>Lifestyle & Physical and mental state & Body parts & Illnesses and symptoms & Treatment</title>
+</head>
+
+<body>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterList()" placeholder="Wyszukaj słówka...">
+        <button id="clearButton" onclick="clearSearch()">
+            <img src="../svg/x.svg" width="16" height="16" />
+        </button>
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="../svg/menu.svg" width="20" height="20" />
+        </button>
+    </div>
+    <div id="menu">
+        <button id="swapButton" onclick="swapColumns(); swapCategoryRowData();">
+            <img src="../svg/swap.svg" width="18" height="18" />
+        </button>
+        <button id="backButton" onclick="goBack()">
+            <img src="../svg/back.svg" width="18" height="18" />
+        </button>
+    </div>
+    
+<table id="translationTable">
+
+<tr class="category-row"><td colspan="2" data-en="Lifestyle" data-pl="Tryb życia">Lifestyle</td></tr> 
+<tr><td>avoid exercising</td><td>unikać ćwiczeń</td></tr> 
+<tr><td>be in good shape</td><td>być w dobrej formie</td></tr> 
+<tr><td>cut down on junk food</td><td>ograniczyć spożywanie niezdrowego jedzenia</td></tr> 
+<tr><td>do regular medical tests</td><td>regularnie się badać</td></tr> 
+<tr><td>eat fatty food</td><td>jeść tłusto</td></tr> 
+<tr><td>follow your doctor's advice</td><td>stosować się do zaleceń lekarza</td></tr> 
+<tr><td>have an early/late night</td><td>pójść wcześniej/późno spać</td></tr> 
+<tr><td>keep fit</td><td>utrzymywać dobrą formę</td></tr> 
+<tr><td>reduce stress</td><td>zredukować stres</td></tr> 
+<tr><td>take care of oneself</td><td>dbać o siebie</td></tr> 
+<tr><td>vaccination</td><td>szczepienie</td></tr> 
+<tr><td>vitamin supplements</td><td>suplementy witaminowe</td></tr> 
+<tr><td>work out</td><td>ćwiczyć</td></tr> 
+<tr class="highlight"><td>chronic stress</td><td>przewlekły stres</td></tr> 
+<tr class="highlight"><td>develop bad habits</td><td>wykształcić złe nawyki</td></tr> 
+<tr class="highlight"><td>sedentary lifestyle</td><td>siedzący tryb życia</td></tr> 
+<tr class="highlight"><td>severely affect sth</td><td>mieć poważny, negatywny wpływ na coś</td></tr> 
+<tr class="highlight"><td>vigorous exercise</td><td>intensywne ćwiczenia</td></tr> 
+<tr class="category-row"><td colspan="2" data-en="Physical and mental state" data-pl="Samopoczucie">Physical and mental state</td></tr> 
+<tr><td>be allergic to sth</td><td>mieć na coś alergię</td></tr> 
+<tr><td>feel dizzy</td><td>mieć zawroty głowy</td></tr> 
+<tr><td>be in perfect health</td><td>być doskonałego zdrowia</td></tr> 
+<tr><td>be sick</td><td>być chorym</td></tr> 
+<tr><td>feel anxious</td><td>być zdenerwowanym, zestresowanym</td></tr> 
+<tr><td>feel sick</td><td>mieć mdłości</td></tr> 
+<tr><td>feel tense</td><td>być spiętym</td></tr> 
+<tr><td>feel unwell</td><td>źle się czuć</td></tr> 
+<tr><td>get over an illness</td><td>dojść do siebie po chorobie</td></tr> 
+<tr><td>get well</td><td>wracać do zdrowia</td></tr> 
+<tr><td>recover from</td><td>wyzdrowieć, dojść do siebie</td></tr> 
+<tr class="highlight"><td>ache all over</td><td>być obolałym</td></tr> 
+<tr class="highlight"><td>be as fit as a fiddle</td><td>być zdrów jak ryba</td></tr> 
+<tr class="highlight"><td>bewildered</td><td>zdezorientowany</td></tr> 
+<tr class="highlight"><td>feel off-colour</td><td>kiepsko się czuć, źle się czuć</td></tr> 
+<tr class="highlight"><td>feel under the weather</td><td>kiepsko się czuć</td></tr> 
+<tr class="highlight"><td>forgetful</td><td>roztargniony</td></tr> 
+<tr class="highlight"><td>heal</td><td>wydobrzeć</td></tr> 
+<tr class="highlight"><td>jet-lagged</td><td>rozbity po długiej podróży lotniczej przez kilka stref czasowych</td></tr> 
+<tr class="highlight"><td>puffed out</td><td>zasapany</td></tr> 
+<tr class="highlight"><td>shattered</td><td>wyczerpany</td></tr> 
+<tr class="category-row"><td colspan="2" data-en="Body parts" data-pl="Części ciała">Body parts</td></tr> 
+<tr><td>ankle</td><td>kostka</td></tr> 
+<tr><td>back</td><td>plecy</td></tr> 
+<tr><td>bones</td><td>kości</td></tr> 
+<tr><td>bottom</td><td>pupa</td></tr> 
+<tr><td>brain</td><td>mózg</td></tr> 
+<tr><td>cheek</td><td>policzek</td></tr> 
+<tr><td>chest</td><td>klatka piersiowa</td></tr> 
+<tr><td>chin</td><td>podbródek, broda</td></tr> 
+<tr><td>elbow</td><td>łokieć</td></tr> 
+<tr><td>eyebrow</td><td>brew</td></tr> 
+<tr><td>eyelash</td><td>rzęsa</td></tr> 
+<tr><td>eyelid</td><td>powieka</td></tr> 
+<tr><td>forehead</td><td>czoło</td></tr> 
+<tr><td>hip</td><td>biodro</td></tr> 
+<tr><td>knee</td><td>kolano</td></tr> 
+<tr><td>lips</td><td>wargi, usta</td></tr> 
+<tr><td>muscles</td><td>mięśnie</td></tr> 
+<tr><td>neck</td><td>szyja</td></tr> 
+<tr><td>shoulder</td><td>bark</td></tr> 
+<tr><td>skin</td><td>skóra</td></tr> 
+<tr><td>spine</td><td>kręgosłup</td></tr> 
+<tr><td>stomach</td><td>brzuch, żołądek</td></tr> 
+<tr><td>thigh</td><td>udo</td></tr> 
+<tr><td>throat</td><td>gardło</td></tr> 
+<tr><td>thumb</td><td>kciuk</td></tr> 
+<tr><td>toe</td><td>palec (u nogi)</td></tr> 
+<tr><td>tongue</td><td>język</td></tr> 
+<tr><td>waist</td><td>talia</td></tr> 
+<tr><td>wrist</td><td>nadgarstek</td></tr> 
+<tr class="highlight"><td>gum</td><td>dziąsło</td></tr> 
+<tr class="highlight"><td>joint</td><td>staw</td></tr> 
+<tr class="highlight"><td>kidney</td><td>nerka</td></tr> 
+<tr class="highlight"><td>knuckle</td><td>knykieć</td></tr> 
+<tr class="highlight"><td>liver</td><td>wątroba</td></tr> 
+<tr class="highlight"><td>lung</td><td>płuco</td></tr> 
+<tr class="highlight"><td>palm</td><td>dłoń</td></tr> 
+<tr class="highlight"><td>ribs</td><td>żebra</td></tr> 
+<tr class="highlight"><td>sole</td><td>podeszwa</td></tr> 
+<tr class="highlight"><td>vein</td><td>żyła</td></tr> 
+<tr class="category-row"><td colspan="2" data-en="Illnesses and symptoms" data-pl="Choroby i ich objawy">Illnesses and symptoms</td></tr> 
+<tr><td>backache</td><td>ból pleców</td></tr> 
+<tr><td>black eye</td><td>podbite oko</td></tr> 
+<tr><td>blister</td><td>pęcherz (odcisk)</td></tr> 
+<tr><td>burn</td><td>oparzenie</td></tr> 
+<tr><td>catch a cold</td><td>przeziębić się</td></tr> 
+<tr><td>come down with sth</td><td>zachorować na coś</td></tr> 
+<tr><td>condition</td><td>choroba (przewlekła)</td></tr> 
+<tr><td>cough</td><td>kasłać</td></tr> 
+<tr><td>cut your finger</td><td>skaleczyć się w palec</td></tr> 
+<tr><td>disease / illness</td><td>choroba</td></tr> 
+<tr><td>earache</td><td>ból ucha</td></tr> 
+<tr><td>faint</td><td>zemdleć</td></tr> 
+<tr><td>food poisoning</td><td>zatrucie pokarmowe</td></tr> 
+<tr><td>hay fever</td><td>katar sienny</td></tr> 
+<tr><td>headache</td><td>ból głowy</td></tr> 
+<tr><td>high temperature</td><td>wysoka temperatura</td></tr> 
+<tr><td>infection</td><td>infekcja</td></tr> 
+<tr><td>influenza (flu)</td><td>grypa</td></tr> 
+<tr><td>migraine</td><td>migrena</td></tr> 
+<tr><td>nosebleed</td><td>krwotok z nosa</td></tr> 
+<tr><td>pick up</td><td>zarazić się, złapać</td></tr> 
+<tr><td>runny nose</td><td>katar</td></tr> 
+<tr><td>shiver</td><td>dygotać, drżeć</td></tr> 
+<tr><td>sneeze</td><td>kichnąć</td></tr> 
+<tr><td>sore throat</td><td>ból gardła</td></tr> 
+<tr><td>stomach ache</td><td>ból brzucha</td></tr> 
+<tr><td>swollen</td><td>spuchnięty</td></tr> 
+<tr><td>throw up / vomit</td><td>zwymiotować</td></tr> 
+<tr><td>toothache</td><td>ból zęba</td></tr> 
+<tr class="highlight"><td>acute tension</td><td>silne napięcie</td></tr> 
+<tr class="highlight"><td>be black and blue</td><td>być posiniaczonym</td></tr> 
+<tr class="highlight"><td>bruise</td><td>siniak</td></tr> 
+<tr class="highlight"><td>bump</td><td>guz</td></tr> 
+<tr class="highlight"><td>chronic distress</td><td>przewlekły ból</td></tr> 
+<tr class="highlight"><td>come out in a rash</td><td>dostać wysypki</td></tr> 
+<tr class="highlight"><td>diarrhoea</td><td>biegunka</td></tr> 
+<tr class="highlight"><td>have blurred vision</td><td>widzieć nieostro</td></tr> 
+<tr class="highlight"><td>irritability</td><td>drażliwość</td></tr> 
+<tr class="highlight"><td>measles</td><td>odra</td></tr> 
+<tr class="highlight"><td>mumps</td><td>świnka</td></tr> 
+<tr class="highlight"><td>nausea</td><td>mdłości</td></tr> 
+<tr class="highlight"><td>nervous breakdown</td><td>załamanie nerwowe</td></tr> 
+<tr class="highlight"><td>racing thoughts</td><td>gonitwa myśli</td></tr> 
+<tr class="highlight"><td>red and itchy eyes</td><td>czerwone i swędzące oczy</td></tr> 
+<tr class="highlight"><td>splitting headache</td><td>rozsadzający ból głowy</td></tr> 
+<tr class="highlight"><td>stiffness</td><td>sztywność</td></tr> 
+<tr class="highlight"><td>torn ligament</td><td>naderwane więzadło</td></tr> 
+<tr class="highlight"><td>tremble</td><td>drżeć</td></tr> 
+<tr class="category-row"><td colspan="2" data-en="Treatment" data-pl="Leczenie">Treatment</td></tr> 
+<tr><td>(in)curable</td><td>(nie)uleczalny</td></tr> 
+<tr><td>antibiotic</td><td>antybiotyk</td></tr> 
+<tr><td>be diagnosed with</td><td>zostać zdiagnozowanym (na)</td></tr> 
+<tr><td>book an appointment (with a doctor)</td><td>umówić się na wizytę (u lekarza)</td></tr> 
+<tr><td>clinic</td><td>klinika</td></tr> 
+<tr><td>consult a doctor</td><td>zasięgnąć porady lekarza</td></tr> 
+<tr><td>cough mixture</td><td>syrop na kaszel</td></tr> 
+<tr><td>cure</td><td>wyleczyć</td></tr> 
+<tr><td>examination</td><td>badanie</td></tr> 
+<tr><td>eye drops</td><td>krople do oczu</td></tr> 
+<tr><td>have an operation</td><td>poddać się operacji</td></tr> 
+<tr><td>have an X-ray</td><td>mieć prześwietlenie</td></tr> 
+<tr><td>health centre</td><td>przychodnia</td></tr> 
+<tr><td>home visit</td><td>wizyta domowa</td></tr> 
+<tr><td>infected</td><td>zakażony</td></tr> 
+<tr><td>injection</td><td>zastrzyk</td></tr> 
+<tr><td>medical advice</td><td>porady medyczne</td></tr> 
+<tr><td>medical check-up</td><td>badanie lekarskie</td></tr> 
+<tr><td>medicine</td><td>lekarstwo</td></tr> 
+<tr><td>nose drops</td><td>krople do nosa</td></tr> 
+<tr><td>ointment</td><td>maść</td></tr> 
+<tr><td>operating theatre</td><td>sala operacyjna</td></tr> 
+<tr><td>painkiller</td><td>środek przeciwbólowy</td></tr> 
+<tr><td>pass on to</td><td>zarazić (kogoś)</td></tr> 
+<tr><td>put your arm/leg in plaster</td><td>założyć gips na rękę/nogę</td></tr> 
+<tr><td>reduce the swelling</td><td>zmniejszyć opuchliznę</td></tr> 
+<tr><td>relieve the pain</td><td>złagodzić ból</td></tr> 
+<tr><td>rest your limb</td><td>oszczędzać kończynę</td></tr> 
+<tr><td>rub in cream</td><td>wcierać krem</td></tr> 
+<tr><td>scratch</td><td>drapać</td></tr> 
+<tr><td>see a doctor</td><td>pójść do lekarza</td></tr> 
+<tr><td>side effects</td><td>skutki uboczne</td></tr> 
+
+</table>
+	
+	<script src="../js/script.js"></script>
+
+</body>
+</html>
