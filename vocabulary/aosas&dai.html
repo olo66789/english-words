@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+	<title>Areas of science and scientists & Discoveries and inventions</title>
+</head>
+
+<body>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterList()" placeholder="Wyszukaj słówka...">
+        <button id="clearButton" onclick="clearSearch()">
+            <img src="../svg/x.svg" width="16" height="16" />
+        </button>
+        <button id="menuButton" onclick="toggleMenu()">
+            <img src="../svg/menu.svg" width="20" height="20" />
+        </button>
+    </div>
+    <div id="menu">
+        <button id="swapButton" onclick="swapColumns(); swapCategoryRowData();">
+            <img src="../svg/swap.svg" width="18" height="18" />
+        </button>
+        <button id="backButton" onclick="goBack()">
+            <img src="../svg/back.svg" width="18" height="18" />
+        </button>
+    </div>
+    
+<table id="translationTable">
+
+<tr class="category-row"><td colspan="2" data-en="Areas of science and scientists" data-pl="Dziedziny nauki i ludzie nauki">Areas of science and scientists</td></tr> 
+<tr class="category-row smaller-category"><td colspan="2" data-en="Areas of science" data-pl="Dziedziny nauki">Areas of science</td></tr> 
+<tr><td>anatomy</td><td>anatomia  </td></tr> 
+<tr><td>archaeology</td><td>archeologia  </td></tr> 
+<tr><td>astronomy</td><td>astronomia  </td></tr> 
+<tr><td>biotechnology</td><td>biotechnologia  </td></tr> 
+<tr><td>computer science</td><td>informatyka  </td></tr> 
+<tr><td>ecology</td><td>ekologia  </td></tr> 
+<tr><td>economics</td><td>ekonomia  </td></tr> 
+<tr><td>engineering</td><td>inżynieria  </td></tr> 
+<tr><td>genetics</td><td>genetyka  </td></tr> 
+<tr><td>geology</td><td>geologia  </td></tr> 
+<tr><td>linguistics</td><td>językoznawstwo  </td></tr> 
+<tr><td>meteorology</td><td>meteorologia  </td></tr> 
+<tr><td>oceanography</td><td>oceanografia  </td></tr> 
+<tr><td>philosophy</td><td>filozofia  </td></tr> 
+<tr><td>physics</td><td>fizyka  </td></tr> 
+<tr><td>sociology</td><td>socjologia  </td></tr> 
+<tr><td>statistics</td><td>statystyka  </td></tr> 
+<tr class="category-row smaller-category"><td colspan="2" data-en="Scientists" data-pl="Ludzie nauki">Scientists</td></tr> 
+<tr><td>anatomist</td><td>anatom  </td></tr> 
+<tr><td>archaeologist</td><td>archeolog  </td></tr> 
+<tr><td>astronomer</td><td>astronom  </td></tr> 
+<tr><td>biotechnologist</td><td>biotechnolog  </td></tr> 
+<tr><td>computer scientist</td><td>informatyk  </td></tr> 
+<tr><td>ecologist</td><td>ekolog  </td></tr> 
+<tr><td>economist</td><td>ekonomista  </td></tr> 
+<tr><td>engineer</td><td>inżynier  </td></tr> 
+<tr><td>geneticist</td><td>genetyk  </td></tr> 
+<tr><td>geologist</td><td>geolog  </td></tr> 
+<tr><td>linguist</td><td>językoznawca  </td></tr> 
+<tr><td>meteorologist</td><td>meteorolog  </td></tr> 
+<tr><td>oceanographer</td><td>oceanograf  </td></tr> 
+<tr><td>philosopher</td><td>filozof  </td></tr> 
+<tr><td>physicist</td><td>fizyk  </td></tr> 
+<tr><td>sociologist</td><td>socjolog  </td></tr> 
+<tr><td>statistician</td><td>statystyk  </td></tr> 
+<tr class="category-row"><td colspan="2" data-en="Discoveries and inventions" data-pl="Odkrycia naukowe i wynalazki">Discoveries and inventions</td></tr> 
+<tr><td>3D printer</td><td>drukarka 3D  </td></tr> 
+<tr><td>aerial</td><td>antena  </td></tr> 
+<tr><td>analyse / analysis</td><td>analizować / analiza</td></tr> 
+<tr><td>binoculars</td><td>lornetka  </td></tr> 
+<tr><td>perform an experiment</td><td>przeprowadzać eksperyment  </td></tr> 
+<tr><td>do scientific research</td><td>prowadzić badania naukowe  </td></tr> 
+<tr><td>collect evidence</td><td>zbierać dowody  </td></tr> 
+<tr><td>develop / development</td><td>opracować / rozwinąć (się) / rozwój  </td></tr> 
+<tr><td>device</td><td>urządzenie  </td></tr> 
+<tr><td>electric current</td><td>prąd elektryczny  </td></tr> 
+<tr><td>e-reader</td><td>czytnik / e-czytnik  </td></tr> 
+<tr><td>estimate</td><td>oszacować  </td></tr> 
+<tr><td>follow instructions</td><td>stosować się do wskazówek  </td></tr> 
+<tr><td>forecast the weather</td><td>prognozować pogodę  </td></tr> 
+<tr><td>have an influence on sth</td><td>mieć wpływ na coś  </td></tr> 
+<tr><td>invent / invention / inventor</td><td>wynaleźć / wynalazek / wynalazca  </td></tr> 
+<tr><td>keep records of sth</td><td>zapisywać, prowadzić dokumentację czegoś  </td></tr> 
+<tr><td>make a difference</td><td>robić różnicę  </td></tr> 
+<tr><td>make a discovery</td><td>dokonać odkrycia  </td></tr> 
+<tr><td>photocopier</td><td>kserokopiarka  </td></tr> 
+<tr><td>predict / prediction</td><td>przewidzieć / przewidywanie / prognoza  </td></tr> 
+<tr><td>prove / proof</td><td>udowodnić / dowód  </td></tr> 
+<tr><td>reach a conclusion</td><td>dojść do wniosku  </td></tr> 
+<tr><td>remote control</td><td>pilot / zdalne sterowanie  </td></tr> 
+<tr><td>specialise in</td><td>specjalizować się w  </td></tr> 
+<tr><td>statistical data</td><td>dane statystyczne  </td></tr> 
+<tr><td>survey</td><td>sondaż</td></tr> 
+<tr><td>touchscreen glass</td><td>szklany ekran dotykowy  </td></tr> 
+<tr><td>VR headset</td><td>gogle rozszerzonej rzeczywistości</td></tr> 
+<tr class="highlight"><td>apply / employ technology</td><td>stosować technologię  </td></tr> 
+<tr class="highlight"><td>arrive at / draw / reach a conclusion</td><td>dojść do wniosku  </td></tr> 
+<tr class="highlight"><td>clone a cell</td><td>sklonować komórkę  </td></tr> 
+<tr class="highlight"><td>come up with a solution</td><td>wymyślić rozwiązanie  </td></tr> 
+<tr class="highlight"><td>compile statistics</td><td>sporządzać statystyki  </td></tr> 
+<tr class="highlight"><td>conduct scientific research</td><td>prowadzić badania naukowe  </td></tr> 
+<tr class="highlight"><td>develop a cure for sth</td><td>opracować lek na coś  </td></tr> 
+<tr class="highlight"><td>explore / exploration</td><td>badać / badanie / rozpoznanie / eksploracja  </td></tr> 
+<tr class="highlight"><td>gene editing</td><td>edycja genów  </td></tr> 
+<tr class="highlight"><td>investigate / investigation</td><td>badać / dociekać / badanie  </td></tr> 
+<tr class="highlight"><td>mobile operating system</td><td>mobilny system operacyjny  </td></tr> 
+<tr class="highlight"><td>observe / observation</td><td>obserwować / obserwacja  </td></tr> 
+<tr class="highlight"><td>obtain evidence</td><td>uzyskać dowody  </td></tr> 
+<tr class="highlight"><td>put forward / reject / accept a hypothesis</td><td>przedstawiać / odrzucać / przyjmować hipotezę  </td></tr> 
+<tr class="highlight"><td>report your findings</td><td>złożyć sprawozdanie z wyników  </td></tr> 
+<tr class="highlight"><td>test a theory</td><td>sprawdzić teorię  </td></tr> 
+<tr class="highlight"><td>work out a solution</td><td>opracowywać rozwiązanie  </td></tr> 
+
+
+</table>
+	
+	<script src="../js/script.js"></script>
+
+</body>
+</html>
